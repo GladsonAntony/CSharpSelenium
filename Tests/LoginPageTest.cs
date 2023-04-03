@@ -17,7 +17,7 @@ namespace CSharpSeleniumFramework.Tests
         }
 
         [Test]
-        public void LoginPageDEmo2()
+        public void LoginPageDemo2()
         {
             LoginPageObjects loginPageObjects = new LoginPageObjects(GetDriver());
 
@@ -25,6 +25,19 @@ namespace CSharpSeleniumFramework.Tests
                 .enterUserName("Gladson Antony")
                 .enterPassword("Gladson Antony");
             Thread.Sleep (5000);
+        }
+
+        [Test]
+        public void LoginPageDemo3()
+        {
+            LoginPageObjects loginPageObjects = new LoginPageObjects(GetDriver());
+
+            loginPageObjects
+                .enterUserName("rahulshettyacademy")
+                .enterPassword("learning")
+                .clickOnAgreeTerms()
+                .clickOnSignInButton();
+            Thread.Sleep(5000);
         }
     }
 }

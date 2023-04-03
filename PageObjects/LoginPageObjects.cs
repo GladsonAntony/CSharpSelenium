@@ -63,5 +63,17 @@ namespace CSharpSeleniumFramework.PageObjects
             password.SendKeys(passwordText);
             return this;
         }
+
+        public LoginPageObjects clickOnSignInButton() 
+        { 
+            signIn.Click();
+            return this;
+        }
+
+        public LoginPageObjects clickOnAgreeTerms()
+        {
+            iAgreeToTheTerms.Click();
+            return this;
+        }
     }
 }
