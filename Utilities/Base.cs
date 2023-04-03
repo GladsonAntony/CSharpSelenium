@@ -2,11 +2,6 @@
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Configuration;
 
 namespace CSharpSeleniumFramework.Utilities
@@ -22,7 +17,7 @@ namespace CSharpSeleniumFramework.Utilities
             InitBrowser(ConfigBrowserName);
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            driver.Url = "https://rahulshettyacademy.com/seleniumPractise/#/offers";
+            driver.Url = ConfigurationManager.AppSettings["URL"];
             TestContext.WriteLine("Title of the Webpage " + driver.Title);
         }
 
@@ -42,6 +37,11 @@ namespace CSharpSeleniumFramework.Utilities
                     driver = new ChromeDriver();
                     break;
             }
+        }
+
+        public IWebDriver GetDriver() 
+        {
+            return driver;
         }
 
         [TearDown]

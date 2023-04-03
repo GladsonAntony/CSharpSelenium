@@ -2,12 +2,14 @@ using CSharpSeleniumFramework.Utilities;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium;
 using System.Collections;
+using NUnit.Framework;
 
 namespace CSharpSeleniumFramework.Tests
 {
     public class Tests : Base
     {
         [Test]
+        [Ignore ("Sample Test")]
         public void Test1()
         {
             IWebElement pageContents = driver.FindElement(By.XPath("//select[@id='page-menu']"));
