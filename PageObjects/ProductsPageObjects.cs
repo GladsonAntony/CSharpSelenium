@@ -1,11 +1,6 @@
 ﻿using CSharpSeleniumFramework.Utilities;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SeleniumExtras.WaitHelpers;
 using OpenQA.Selenium.Support.UI;
 
@@ -31,6 +26,7 @@ namespace CSharpSeleniumFramework.PageObjects
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             wait.Until(ExpectedConditions.ElementIsVisible(By.PartialLinkText("Checkout")));
+            TestContext.WriteLine("Title Of The Page --> " +driver.FindElement(By.TagName("h1")).Text);
             return this;
         }
 

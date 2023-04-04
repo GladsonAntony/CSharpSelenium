@@ -16,14 +16,15 @@ namespace CSharpSeleniumFramework.Tests
             Thread.Sleep(5000);
         }
 
-        [Test]
-        public void LoginPageDemo2()
+        [TestCase("Gladson Antony", "Password")]
+        [TestCase("rahulshettyacademy", "learning")]
+        public void LoginPageDemo2(String username, String password)
         {
             LoginPageObjects loginPageObjects = new LoginPageObjects(GetDriver());
 
             loginPageObjects
-                .enterUserName("Gladson Antony")
-                .enterPassword("Gladson Antony");
+                .enterUserName(username)
+                .enterPassword(password);
             Thread.Sleep (5000);
         }
 
