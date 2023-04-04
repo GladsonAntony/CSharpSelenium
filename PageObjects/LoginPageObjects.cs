@@ -75,5 +75,14 @@ namespace CSharpSeleniumFramework.PageObjects
             iAgreeToTheTerms.Click();
             return this;
         }
+
+        public ProductsPageObjects loginToTheWebsite(String userName, String passwordText)
+        {
+            username.SendKeys(userName);
+            password.SendKeys(passwordText);
+            iAgreeToTheTerms.Click();
+            signIn.Click();
+            return new ProductsPageObjects(driver);
+        }
     }
 }

@@ -39,5 +39,18 @@ namespace CSharpSeleniumFramework.Tests
                 .clickOnSignInButton();
             Thread.Sleep(5000);
         }
+
+        [Test]
+        public void LoginPageDemo4()
+        {
+            LoginPageObjects loginPageObjects = new LoginPageObjects(GetDriver());
+
+            loginPageObjects
+                .loginToTheWebsite("rahulshettyacademy", "learning")
+                .WaitForPageDisplay()
+                .getProducts()
+                .clickOnCheckOutButton();
+            Thread.Sleep(5000);
+        }
     }
 }
