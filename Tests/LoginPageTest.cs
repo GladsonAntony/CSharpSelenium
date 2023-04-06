@@ -1,11 +1,13 @@
 ﻿using CSharpSeleniumFramework.PageObjects;
 using CSharpSeleniumFramework.Utilities;
+using NUnit.Framework;
 
 namespace CSharpSeleniumFramework.Tests
 {
+    [Parallelizable(ParallelScope.All)]
     public  class LoginPageTest : Base
     {
-        [Test]
+        [Test, Category("Smoke")]
         public void LoginPageDemo()
         {
             LoginPageObjects loginPageObjects = new LoginPageObjects(GetDriver());
@@ -28,7 +30,7 @@ namespace CSharpSeleniumFramework.Tests
             Thread.Sleep (5000);
         }
 
-        [Test]
+        [Test, Category("Smoke")]
         public void LoginPageDemo3()
         {
             LoginPageObjects loginPageObjects = new LoginPageObjects(GetDriver());
@@ -41,17 +43,25 @@ namespace CSharpSeleniumFramework.Tests
             Thread.Sleep(5000);
         }
 
-        [Test]
-        public void LoginPageDemo4()
+        [TestCaseSource("AddTestDataConfig")]
+        //[Parallelizable(ParallelScope.All)]
+        public void LoginPageDemo4(String username, String password)
         {
             LoginPageObjects loginPageObjects = new LoginPageObjects(GetDriver());
 
             loginPageObjects
-                .loginToTheWebsite("rahulshettyacademy", "learning")
+                .loginToTheWebsite(username,password)
                 .WaitForPageDisplay()
                 .getProducts()
                 .clickOnCheckOutButton();
             Thread.Sleep(5000);
+        }
+
+        public static IEnumerable<TestCaseData> AddTestDataConfig()
+        {
+            yield return new TestCaseData("rahulshettyacademy", "learning");            
+            yield return new TestCaseData(getDataParser().extractData("username"), getDataParser().extractData("password"));
+            yield return new TestCaseData(getDataParser().extractData("username_wrong"), getDataParser().extractData("password_wrong"));
         }
     }
 }

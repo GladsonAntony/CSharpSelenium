@@ -52,16 +52,6 @@ namespace CSharpSeleniumFramework.PageObjects
             wait.Until(ExpectedConditions.ElementToBeClickable(button_Checkout));
             return this;
         }
-
-
     }
 }
-
-
-//webDriverWait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//button[normalize-space()='Checkout']")));
-//driver.FindElement(By.XPath("//button[normalize-space()='Checkout']")).Click();
-//webDriverWait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("input[value='Purchase']")));
-//driver.FindElement(By.CssSelector("input[value='Purchase']")).Click();            
-//    }
-//}
  

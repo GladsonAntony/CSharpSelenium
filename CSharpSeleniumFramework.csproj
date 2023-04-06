@@ -13,6 +13,7 @@
 		<PackageReference Include="DotNetSeleniumExtras.PageObjects" Version="3.11.0" />
 		<PackageReference Include="DotNetSeleniumExtras.PageObjects.Core" Version="4.3.0" />
 		<PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
+		<PackageReference Include="ExtentReports" Version="4.1.0" />
 		<PackageReference Include="Faker.Net" Version="2.0.154" />
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
 		<PackageReference Include="NUnit" Version="3.13.3" />
@@ -28,6 +29,12 @@
 		<PackageReference Include="Selenium.Support" Version="4.8.2" />
 		<PackageReference Include="Selenium.WebDriver" Version="4.8.2" />
 		<PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="Tests\TestData.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
 	</ItemGroup>
 
 	<Target Name="CopyCustomContent" AfterTargets="AfterBuild">

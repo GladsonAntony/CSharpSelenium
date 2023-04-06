@@ -12,3 +12,19 @@ using System.Diagnostics.CodeAnalysis;
     Scope = "member",
     Target = "~M:CSharpSeleniumFramework.Tests.Tests.Test1"
 )]
+
+[assembly: SuppressMessage(
+    "Structure", 
+    "NUnit1002:The TestCaseSource should use nameof operator to specify target", 
+    Justification = "<Pending>", 
+    Scope = "member", 
+    Target = "~M:CSharpSeleniumFramework.Tests.LoginPageTest.LoginPageDemo4(System.String,System.String)"
+    )]
+
+[assembly: SuppressMessage
+    ("Style", 
+    "IDE0044:Add readonly modifier", 
+    Justification = "<Pending>", 
+    Scope = "member", 
+    Target = "~F:CSharpSeleniumFramework.PageObjects.ProductsPageObjects.driver"
+    )]

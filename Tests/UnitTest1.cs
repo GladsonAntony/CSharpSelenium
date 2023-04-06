@@ -12,13 +12,13 @@ namespace CSharpSeleniumFramework.Tests
         [Ignore ("Sample Test")]
         public void Test1()
         {
-            IWebElement pageContents = driver.FindElement(By.XPath("//select[@id='page-menu']"));
+            IWebElement pageContents = driver.Value.FindElement(By.XPath("//select[@id='page-menu']"));
             SelectElement selectElement = new SelectElement(pageContents);
             Assert.IsNotNull(selectElement);
             selectElement.SelectByValue("20");
 
             ArrayList a = new ArrayList();
-            IList<IWebElement> VeggiesList = driver.FindElements(By.XPath("//tr/td[1]"));
+            IList<IWebElement> VeggiesList = driver.Value.FindElements(By.XPath("//tr/td[1]"));
 
             TestContext.WriteLine(
                 "\n\nListing all the Vegitables in the Web Page and moving them to Array List"
@@ -43,12 +43,12 @@ namespace CSharpSeleniumFramework.Tests
                 TestContext.WriteLine(sortedVeggies);
             }
 
-            driver.FindElement(By.XPath("//span[normalize-space()='Veg/fruit name']")).Click();
+            driver.Value.FindElement(By.XPath("//span[normalize-space()='Veg/fruit name']")).Click();
             Thread.Sleep(1000);
 
             ArrayList b = new ArrayList();
 
-            IList<IWebElement> SortedVeggiesList = driver.FindElements(By.XPath("//tr/td[1]"));
+            IList<IWebElement> SortedVeggiesList = driver.Value.FindElements(By.XPath("//tr/td[1]"));
 
             TestContext.WriteLine(
                 "\n\nListing all the Vegitables in the Web Page after Sorting and moving them to Array List"
